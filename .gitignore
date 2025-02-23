@@ -1,0 +1,24 @@
+# Diretórios e arquivos do Python
+*.pyc
+__pycache__/
+db.sqlite3
+
+# Ambiente virtual
+venv/
+.env
+
+# Arquivos do Django que não precisam ser versionados
+*.log
+*.pot
+*.pyc
+*.swp
+media/
+staticfiles/
+
+# Configurações de IDEs
+.vscode/
+.idea/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db

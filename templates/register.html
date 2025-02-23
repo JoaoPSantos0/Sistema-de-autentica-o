@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'teste.css' %}">
+    {% block 'head' %}{% endblock 'head' %}
+</head>
+<body>
+
+    <div class="main-div">
+        <div class="left-side">
+            <h1>Entre para o nosso time</h1>
+            <img src={% static 'register_bank.svg' %} alt="Bank">
+        </div>
+        <div class="rigth-side">
+            <form class="card" type="submit" action="{% url 'register'%}" method="POST">{% csrf_token %}   
+                <h1>Logon</h1>
+                <div class="textfield">
+                    <label for="user">Usuario</label>
+                    <input type="text" name="user" placeholder="Usuario">
+                </div>
+                <div class="textfield">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" placeholder="Email">
+                </div>
+                <div class="textfield">
+                    <label for="password">Senha</label>
+                    <input type="password" name="password" placeholder="Senha">
+                </div>
+                <div class="textfield">
+                    <label for="password_confirm">Confirmar senha</label>
+                    <input type="password" name="password_confirm" placeholder="Confirmar senha">
+                </div>    
+                <button class="btn-login">Cadastrar</button>
+                <button class="btn-login" type="button" onclick="window.location.href='{% url 'login' %}'">Voltar</button>
+                </div>
+            </form>
+    </div>
+        
+            
+        
+    {% block 'body' %}{% endblock 'body' %}
+</body>
+</html>
